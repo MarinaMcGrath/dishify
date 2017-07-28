@@ -1,7 +1,7 @@
 angular
     .module('recipeApp')
         .component('recipeList', {
-            template: 
+            templateUrl: 
             `<ul>
                 <li>My List</li>
             </ul>`
