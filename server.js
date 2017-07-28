@@ -11,11 +11,12 @@ app.use(bodyParser.json());
 require('dotenv').config();
 
 app.set('port', (process.env.PORT || 3000));
+// app.set('view engine', 'html');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
-  response.render('/index.html');
+  response.sendFile(path.join(__dirname, 'public/signup.html'));
 });
 
 
