@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const handler = require('./request-handler.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -16,10 +17,7 @@ app.get('/', function(request, response) {
 });
 
 
-app.post('/server', function(req, res) {
-  console.log(req.body);
-  res.end();
-});
+app.post('/signup', handler.signupUser);
 
 
 app.listen(app.get('port'), () => {

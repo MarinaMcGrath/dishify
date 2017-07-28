@@ -4,6 +4,6 @@ dishifyApp
     .controller('SignupController', function SignupController($scope, $http) {
         $scope.test = (name, pass) => {
             console.log(name, pass);
-            $http.post('/server', {username: name, password: pass});
+            $http.post('/signup', {username: name, password: pass});
         }
 });
