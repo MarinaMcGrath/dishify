@@ -1,4 +1,4 @@
-# Project Name #
+# Dishify #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,24 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## The New Way to Cook ##
+  > Store, share, and serve your favorite recipes!
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Tired of Cluttered Recipe Websites? ##
+  > Dishify simplifies the cooking process.
 
-## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+## So What Is It? ##
+  > Are you tired of recipe websites that look like they were designed by 12 year-olds? The ones that take 5 minutes to load and are basically just a page of advertisements? Then Dishify is for you. You can store and organize your favorite recipes in a clean layout for easy access and readability. Also, login with Facebook to see and share recipes with your friends. For a hands off experience, use Dishify to read recipe steps to you while you cook!  
 
-## Problem ##
-  > Describe the problem your product solves.
-
-## Solution ##
-  > Describe how your product elegantly solves the problem.
-
-## Quote from You ##
-  > A quote from a spokesperson in your company.
-
-## How to Get Started ##
-  > Describe how easy it is to get started.
+## Quote From Our Founder ##
+  > "I created dishify because I was tired of having to visit at least 10 poorly designed websites to find a good recipe for taco bowls" - Marina
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "My whole life is perfect now that I use dishify!" -Cain
+  > "Wow I've never seen anythng this beautiful in my entire life!" -Jacques
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## How to Get Started ##
+  > Just head to dishify.com and sign up!
+
+
+
