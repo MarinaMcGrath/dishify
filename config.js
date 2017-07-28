@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds127173.mlab.com:27173/dishify-db`, () => {
-    console.log('connected');
+  console.log('connected');
 });
 
 const userSchema = mongoose.Schema({
-    username: String,
-    password: String
-})
+  username: String,
+  password: String,
+});
 
 const User = mongoose.model('User', userSchema);
 
