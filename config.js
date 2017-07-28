@@ -5,9 +5,11 @@ mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD
     console.log('connected');
 });
 
-// const db = mongoose.connection;
+const userSchema = mongoose.Schema({
+    username: String,
+    password: String
+})
 
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log("we're connected!");
-// });
+const User = mongoose.model('User', userSchema);
+
+module.exports.User = User;
