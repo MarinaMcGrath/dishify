@@ -1,0 +1,22 @@
+{
+  "name": "immersion-2017-06-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaMcGrath/mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaMcGrath/mvp/issues"
+  },
+  "homepage": "https://github.com/MarinaMcGrath/mvp#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
