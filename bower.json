@@ -1,7 +1,7 @@
 {
   "name": "immersion-2017-06-mvp",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
     "MarinaMcGrath <marinamcgrath92@gmail.com>"
   ],
