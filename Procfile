@@ -1,1 +1,1 @@
-web: npm install -g bower && cd public && cd views && bower install && cd ../ && node server.js
+web: npm install -g bower && cd public && cd views && bower install && cd ../../ && node server.js
