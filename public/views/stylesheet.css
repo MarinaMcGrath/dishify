@@ -1,0 +1,12 @@
+body {
+  font-family: 'Didact Gothic';
+
+}
+
+.recipes {
+  border: 10px solid pink;
+}
+
+.favorites {
+  border: 5px solid pink;
+}
