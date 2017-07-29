@@ -6,7 +6,7 @@ dishifyApp
       $http
         .post('/login', { username: name, password: pass })
         .then((found) => {
-          console.log(found);
+          window.location.href = found.data;
         });
     };
   });

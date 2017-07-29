@@ -17,7 +17,7 @@ exports.loginUser = (req, res) => {
     .find({ username: req.body.username, password: req.body.password })
     .then((found) => {
       console.log('found it', found);
-      res.redirect('/homepage');
+      res.send('/homepage');
     })
     .catch((err) => {
       res.end(err);
