@@ -32,8 +32,9 @@
         <h2>Favorites</h2>
         <ul ng-controller="FavoritesController">
           <li ng-repeat="favorite in favorites" favorite="favorite">
-              <div><a href={{favorite.source}}>{{favorite.title}}</a></div>
-              <div><image src={{favorite.image_url}} style="width:100px;height:100px;"></image></div>
+                <button id ={{favorite}} ng-click="removeFavorite($event)" type="button" class="btn btn-danger btn-sm">X</button>
+                <div><a href={{favorite.source}}>{{favorite.title}}</a></div>
+                <div><image src={{favorite.image_url}} style="width:100px;height:100px;"></image></div>
           </li>
         </ul>
       </div>

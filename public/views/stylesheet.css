@@ -1,5 +1,6 @@
 body {
   font-family: 'Didact Gothic';
+   background-color: #f8f8ff; 
 
 }
 .login {
@@ -16,4 +17,6 @@ body {
 
 .favorites {
   border: 5px solid #F4E489;
+  /* box-shadow: 10px 10px 5px grey; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
 }

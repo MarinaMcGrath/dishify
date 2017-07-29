@@ -6,6 +6,15 @@ dishifyApp
       .then((result) => {
         $scope.favorites = result.data;
       });
+    $scope.removeFavorite = ($event) => {
+      const curr = JSON.parse($event.currentTarget.id);
+      $http.delete('/favorites', {
+        params: { title: curr.title },
+      })
+        .then((success) => {
+          console.log(success);
+        });
+    };
   });
 
 dishifyApp
@@ -22,7 +31,6 @@ dishifyApp
     };
     $scope.addFavorite = ($event) => {
       const recipe = JSON.parse($event.currentTarget.id);
-      console.log(recipe.f2f_url);
       $http.post('/favorites', {
         title: recipe.title,
         image_url: recipe.image_url,

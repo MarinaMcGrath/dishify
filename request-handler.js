@@ -8,7 +8,7 @@ exports.signupUser = (req, res) => {
   });
   user.save((err, saved) => {
     if (err) {
-      console.error(err);
+      res.send(err);
     }
     return saved;
   });
@@ -22,7 +22,6 @@ exports.loginUser = (req, res) => {
       if (found.length === 0) {
         res.send('/signup');
       } else {
-        console.log('found it', found);
         res.send('/homepage');
       }
     });
@@ -36,7 +35,7 @@ exports.addFavorite = (req, res) => {
   });
   favorite.save((err, saved) => {
     if (err) {
-      console.log(err);
+      res.send(err);
     }
     return saved;
   });
@@ -49,4 +48,14 @@ exports.getFavorites = (req, res) => {
     .then((found) => {
       res.send(found);
     });
+};
+
+exports.deleteFavorite = (req, res) => {
+  Favorite.findOneAndRemove({ title: req.query.title }, (err, done) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(done);
+    }
+  });
 };
