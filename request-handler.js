@@ -9,17 +9,17 @@ exports.signupUser = (req, res) => {
     }
     return saved;
   });
-  res.end();
+  res.send('/homepage');
 };
 
 exports.loginUser = (req, res) => {
   User
     .find({ username: req.body.username, password: req.body.password })
     .then((found) => {
+      if (found.length === 0) {
+        res.send('/signup');
+      }
       console.log('found it', found);
       res.send('/homepage');
-    })
-    .catch((err) => {
-      res.end(err);
     });
 };
