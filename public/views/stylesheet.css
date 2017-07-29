@@ -2,11 +2,18 @@ body {
   font-family: 'Didact Gothic';
 
 }
+.login {
+  text-align: center;
+}
+
+.signup {
+  text-align: center;
+}
 
 .recipes {
-  border: 10px solid pink;
+  border: 10px solid #F4E489;
 }
 
 .favorites {
-  border: 5px solid pink;
+  border: 5px solid #F4E489;
 }
