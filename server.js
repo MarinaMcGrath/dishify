@@ -5,6 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const handler = require('./request-handler.js');
 const unirest = require('unirest');
+const session = require('express-session');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -16,6 +17,14 @@ app.use(express.static(path.join(__dirname, 'public/views')));
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
 });
+const sess = {
+  secret: 'Hey cat',
+  resave: false,
+  cookie: {
+    secure: true,
+  },
+};
+app.use(session(sess));
 // initial render
 app.get('/login', handler.loginUser);
 app.get('/', (req, res) => {
