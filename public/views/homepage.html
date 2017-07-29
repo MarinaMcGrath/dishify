@@ -4,19 +4,33 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
     <h1>Dishly Home Page</h1>
-    <h2>Recipes</h2>
-    <ul ng-controller="RecipeListController">
-      <form ng-submit="searchRecipes(query)">Search Recipes
-        <input type="text" ng-model="query" placeholder="Query">
-        <input type="submit">
-      </form>
-      <li ng-repeat="recipe in recipes" recipe="recipe">{{recipe.title}}</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-6">
+        <ul ng-controller="RecipeListController">
+          <form ng-submit="searchRecipes(query)">Search Recipes
+            <input type="text" ng-model="query" placeholder="Query">
+            <input type="submit">
+          </form>
+          <li ng-repeat="recipe in recipes" recipe="recipe">
+            <a href={{recipe.f2f_url}}>{{recipe.title}}</a>
+            <image src={{recipe.image_url}}></image>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <ul ng-controller="FavoritesController">Favorites
+          <li ng-repeat="favorite in favorites" favorite="favorite">{{favorite.title}}</li>
+        </ul>
+      </div>
+
+    </div>
+
     <script src="bower_components/angular/angular.js"></script>
-    <script src="controllers/recipe-list.controller.js"></script>
+    <script src="controllers/recipes.controller.js"></script>
   </body>
 </html>

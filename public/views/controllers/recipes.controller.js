@@ -10,3 +10,18 @@ dishifyApp
         });
     };
   });
+
+dishifyApp
+  .controller('FavoritesController', ($scope) => {
+    $scope.favorites = [
+      {
+        title: 'numbah 1',
+      },
+      {
+        title: 'numbah 2',
+      },
+      {
+        title: 'numbah 3',
+      },
+    ];
+  });
