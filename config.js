@@ -11,12 +11,12 @@ const userSchema = mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
-const recipeSchema = mongoose.Schema({
+const favoritesSchema = mongoose.Schema({
   title: String,
-  ingredients: String,
-  instructions: String,
+  image_url: String,
+  source: String,
 });
-const Recipe = mongoose.model('Recipe', recipeSchema);
+const Favorite = mongoose.model('Recipe', favoritesSchema);
 
-module.exports.Recipe = Recipe;
+module.exports.Favorite = Favorite;
 module.exports.User = User;

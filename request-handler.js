@@ -1,8 +1,11 @@
 const User = require('./config').User;
-
+const Favorite = require('./config').Favorite;
 
 exports.signupUser = (req, res) => {
-  const user = new User({ username: req.body.username, password: req.body.password });
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password,
+  });
   user.save((err, saved) => {
     if (err) {
       console.error(err);
@@ -24,3 +27,17 @@ exports.loginUser = (req, res) => {
     });
 };
 
+exports.addFavorite = (req, res) => {
+  const favorite = new Favorite({
+    title: req.body.title,
+    image_url: req.body.image_url,
+    source_url: req.body.source_url,
+  });
+  favorite.save((err, saved) => {
+    if (err) {
+      console.log(err);
+    }
+    return saved;
+  });
+  res.end();
+};
