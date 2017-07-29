@@ -33,7 +33,7 @@ app.get('/homepage', (req, res) => {
 });
 
 app.get('/recipes', (req, result) => {
-  unirest.get(`https://community-food2fork.p.mashape.com/search?key=${process.env.FOOD_API}&q=${req.query.q}`)
+  unirest.get(`${process.env.RECIPE_GET}&q=${req.query.q}`)
     .header('X-Mashape-Key', process.env.X_MASHAPE_KEY)
     .header('Accept', 'application/json')
     .end((res) => {
