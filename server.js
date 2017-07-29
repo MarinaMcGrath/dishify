@@ -16,12 +16,16 @@ app.set('port', (process.env.PORT || 3000));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
+  response.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app.get('/signup', (request, response) => {
   response.sendFile(path.join(__dirname, 'public/signup.html'));
 });
 
-
 app.post('/signup', handler.signupUser);
 
+app.post('/login', handler.loginUser);
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));

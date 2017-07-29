@@ -7,7 +7,21 @@ exports.signupUser = (req, res) => {
     if (err) {
       console.error(err);
     }
-    console.log(saved);
+    return saved;
   });
+  res.end();
+};
+
+exports.loginUser = (req, res) => {
+  console.log('made it');
+  User
+    .find({ username: req.body.username, password: req.body.password })
+    .then((found) => {
+      console.log(found);
+      // res.status(200).send(found);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   res.end();
 };

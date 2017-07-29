@@ -6,7 +6,7 @@ mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD
 });
 
 const userSchema = mongoose.Schema({
-  username: String,
+  username: { type: String, index: { unique: true } },
   password: String,
 });
 
