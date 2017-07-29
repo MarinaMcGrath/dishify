@@ -6,13 +6,21 @@ mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD
 });
 
 const userSchema = mongoose.Schema({
-  username: { type: String, index: { unique: true } },
+  username: {
+    type: String,
+    index: { unique: true },
+  },
   password: String,
+  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Favorite' }],
 });
 const User = mongoose.model('User', userSchema);
 
 const favoritesSchema = mongoose.Schema({
-  title: String,
+  _user: { type: Number, ref: 'User' },
+  title: {
+    type: String,
+    index: { unique: true },
+  },
   image_url: String,
   source: String,
 });

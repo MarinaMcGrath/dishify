@@ -16,7 +16,7 @@
         <h2>Search Recipes</h2>
         <ul ng-controller="RecipeListController">
           <form ng-submit="searchRecipes(query)">
-            <input type="text" ng-model="query" placeholder="Query">
+            <input type="text" ng-model="query" placeholder="What's in your kitchen?">
             <input type="submit">
           </form>
           <li ng-repeat="recipe in recipes" recipe="recipe">
