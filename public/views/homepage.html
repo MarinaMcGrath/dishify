@@ -20,7 +20,7 @@
             <input type="submit">
           </form>
           <li ng-repeat="recipe in recipes" recipe="recipe">
-            <div id={{recipe.title}} ng-click="addFavorite($event)">
+            <div id={{recipe}} ng-click="addFavorite($event)">
               <div><a href={{recipe.f2f_url}}>{{recipe.title}}</a></div>
               <div><image src={{recipe.image_url}} style="width:200px;height:200px;"></image></div>
             </div>
@@ -31,7 +31,10 @@
       <div class="col-md-4 favorites">
         <h2>Favorites</h2>
         <ul ng-controller="FavoritesController">
-          <li ng-repeat="favorite in favorites" favorite="favorite">{{favorite.title}}</li>
+          <li ng-repeat="favorite in favorites" favorite="favorite">
+              <div><a href={{favorite.source}}>{{favorite.title}}</a></div>
+              <div><image src={{favorite.image_url}} style="width:200px;height:200px;"></image></div>
+          </li>
         </ul>
       </div>
 

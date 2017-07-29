@@ -29,11 +29,10 @@ exports.loginUser = (req, res) => {
 };
 
 exports.addFavorite = (req, res) => {
-  console.log(req.body);
   const favorite = new Favorite({
     title: req.body.title,
-    // image_url: req.body.image_url,
-    // source_url: req.body.source_url,
+    image_url: req.body.image_url,
+    source: req.body.source_url,
   });
   favorite.save((err, saved) => {
     if (err) {
