@@ -1,16 +1,9 @@
 const dishifyApp = angular.module('dishifyApp', []);
 
 dishifyApp
-  .controller('RecipeListController', ($scope) => {
-    $scope.recipes = [
-      {
-        name: 'Chicken',
-      },
-      {
-        name: 'Steak',
-      },
-      {
-        name: 'Eggs',
-      },
-    ];
+  .controller('RecipeListController', ($scope, $http) => {
+    $http.get('/recipes')
+      .then((a) => {
+        $scope.recipe = a.data.recipe;
+      });
   });

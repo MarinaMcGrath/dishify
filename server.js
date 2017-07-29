@@ -4,6 +4,9 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const handler = require('./request-handler.js');
+const unirest = require('unirest');
+
+// const Request = unirest.get('http://mockbin.com/request');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,6 +33,16 @@ app.get('/homepage', (req, res) => {
 app.post('/signup', handler.signupUser);
 
 app.post('/login', handler.loginUser);
+
+app.get('/recipes', (req, result) => {
+  unirest.get(`https://community-food2fork.p.mashape.com/get?key=${process.env.FOOD_API}&rId=37859`)
+    .header('X-Mashape-Key', process.env.X_MASHAPE_KEY)
+    .header('Accept', 'application/json')
+    .end((res) => {
+      console.log(res.status, res.headers, res.body);
+      result.end(res.body);
+    });
+});
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
