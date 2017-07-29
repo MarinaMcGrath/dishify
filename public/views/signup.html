@@ -5,17 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- <link href="css/style.css" rel="stylesheet"> -->
-        <script src="bower_components/angular/angular.js"></script> 
     </head>
-    <body>
+    <body ng-controller="SignupController">
         <h1>Dishify</h1>
-        <div ng-controller="SignupController">Signup
+        <form ng-submit="signup()">Signup
             <input ng-model="name" type="text" placeholder="Username">
             <input ng-model="pass" type="text" placeholder="Password">
-            <button ng-click="signup(name, pass)">submit</button>
-       
-        </div>
+            <input type="submit">
+        </form>
 
+        <script src="bower_components/angular/angular.js"></script> 
         <script src="controllers/signup.controller.js"></script>   
     </body>
 </html>

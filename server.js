@@ -24,7 +24,6 @@ app.get('/signup', (req, res) => {
 });
 
 app.get('/homepage', (req, res) => {
-  console.log('homepage');
   res.sendFile(path.join(__dirname, 'public/views/homepage.html'));
 });
 

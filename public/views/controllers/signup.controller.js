@@ -2,10 +2,9 @@ const dishifyApp = angular.module('dishifyApp', []);
 
 dishifyApp
   .controller('SignupController', ($scope, $http) => {
-    $scope.signup = (name, pass) => {
-      $http.post('/signup', { username: name, password: pass })
+    $scope.signup = () => {
+      $http.post('/signup', { username: $scope.name, password: $scope.pass })
         .then((found) => {
-          console.log(found);
           window.location.href = found.data;
         });
     };
