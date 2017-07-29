@@ -16,8 +16,8 @@
             <input type="submit">
           </form>
           <li ng-repeat="recipe in recipes" recipe="recipe">
-            <a href={{recipe.f2f_url}}>{{recipe.title}}</a>
-            <image src={{recipe.image_url}}></image>
+            <div><a href={{recipe.f2f_url}}>{{recipe.title}}</a></div>
+            <div><image src={{recipe.image_url}} style="width:200px;height:200px;"></image></div>
           </li>
         </ul>
       </div>
