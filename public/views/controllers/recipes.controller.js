@@ -1,6 +1,11 @@
 const dishifyApp = angular.module('dishifyApp', []);
 
 dishifyApp
+  .controller('FavoritesController', ($scope) => {
+    $scope.favorites = [];
+  });
+
+dishifyApp
   .controller('RecipeListController', ($scope, $http) => {
     $scope.searchRecipes = () => {
       $http.get('/recipes', {
@@ -12,19 +17,14 @@ dishifyApp
           $scope.recipes = a.data.recipes;
         });
     };
+    $scope.addFavorite = ($event) => {
+      console.log($event.currentTarget.id);
+      $http
+        .post('/favorites', { title: $event.currentTarget.id })
+        .then((found) => {
+          console.log(found);
+        });
+    };
   });
 
-dishifyApp
-  .controller('FavoritesController', ($scope) => {
-    $scope.favorites = [
-      {
-        title: 'numbah 1',
-      },
-      {
-        title: 'numbah 2',
-      },
-      {
-        title: 'numbah 3',
-      },
-    ];
-  });
+// { title: r.title, image_url: r.image_url, source_url: r.source_url }

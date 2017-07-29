@@ -16,23 +16,24 @@ exports.signupUser = (req, res) => {
 };
 
 exports.loginUser = (req, res) => {
-  console.log(req.query);
   User
     .find({ username: req.query.username, password: req.query.password })
     .then((found) => {
       if (found.length === 0) {
         res.send('/signup');
+      } else {
+        console.log('found it', found);
+        res.send('/homepage');
       }
-      console.log('found it', found);
-      res.send('/homepage');
     });
 };
 
 exports.addFavorite = (req, res) => {
+  console.log(req.body);
   const favorite = new Favorite({
     title: req.body.title,
-    image_url: req.body.image_url,
-    source_url: req.body.source_url,
+    // image_url: req.body.image_url,
+    // source_url: req.body.source_url,
   });
   favorite.save((err, saved) => {
     if (err) {
@@ -40,5 +41,5 @@ exports.addFavorite = (req, res) => {
     }
     return saved;
   });
-  res.end();
+  res.send('/homepage');
 };

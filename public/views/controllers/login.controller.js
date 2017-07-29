@@ -11,7 +11,7 @@ dishifyApp
           },
         })
         .then((found) => {
-          console.log('FOUND');
+          console.log(found.data);
           window.location.href = found.data;
         });
     };

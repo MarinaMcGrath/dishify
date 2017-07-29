@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body class="homepage">
-    <h1>Dishify Home Page</h1>
-    <image src="plate.png" style="width:50px;height:50px;"></image>
+    <h1>
+      <image src="plate.png" style="width:50px;height:50px;">Dishify Home Page</image>
+    </h1>
     <div class="row">
       <div class="col-md-6 search">
         <h2>Search Recipes</h2>
@@ -19,8 +20,10 @@
             <input type="submit">
           </form>
           <li ng-repeat="recipe in recipes" recipe="recipe">
-            <div><a href={{recipe.f2f_url}}>{{recipe.title}}</a></div>
-            <div><image src={{recipe.image_url}} style="width:200px;height:200px;"></image></div>
+            <div id={{recipe.title}} ng-click="addFavorite($event)">
+              <div><a href={{recipe.f2f_url}}>{{recipe.title}}</a></div>
+              <div><image src={{recipe.image_url}} style="width:200px;height:200px;"></image></div>
+            </div>
           </li>
         </ul>
       </div>
