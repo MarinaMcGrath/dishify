@@ -13,19 +13,19 @@ require('dotenv').config();
 app.set('port', (process.env.PORT || 3000));
 // app.set('view engine', 'html');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/views')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
 
 app.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/signup.html'));
+  res.sendFile(path.join(__dirname, 'public/views/signup.html'));
 });
 
 app.get('/homepage', (req, res) => {
   console.log('homepage');
-  res.sendFile(path.join(__dirname, 'public/homepage.html'));
+  res.sendFile(path.join(__dirname, 'public/views/homepage.html'));
 });
 
 app.post('/signup', handler.signupUser);
