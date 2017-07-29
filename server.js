@@ -15,12 +15,17 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'public/index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.get('/signup', (request, response) => {
-  response.sendFile(path.join(__dirname, 'public/signup.html'));
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/signup.html'));
+});
+
+app.get('/homepage', (req, res) => {
+  console.log('homepage');
+  res.sendFile(path.join(__dirname, 'public/homepage.html'));
 });
 
 app.post('/signup', handler.signupUser);

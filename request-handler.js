@@ -13,15 +13,13 @@ exports.signupUser = (req, res) => {
 };
 
 exports.loginUser = (req, res) => {
-  console.log('made it');
   User
     .find({ username: req.body.username, password: req.body.password })
     .then((found) => {
-      console.log(found);
-      // res.status(200).send(found);
+      console.log('found it', found);
+      res.redirect('/homepage');
     })
     .catch((err) => {
-      console.error(err);
+      res.end(err);
     });
-  res.end();
 };
