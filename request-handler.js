@@ -32,7 +32,7 @@ exports.addFavorite = (req, res) => {
   const favorite = new Favorite({
     title: req.body.title,
     image_url: req.body.image_url,
-    source: req.body.source_url,
+    source: req.body.source,
   });
   favorite.save((err, saved) => {
     if (err) {

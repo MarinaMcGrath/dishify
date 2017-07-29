@@ -22,6 +22,7 @@ dishifyApp
     };
     $scope.addFavorite = ($event) => {
       const recipe = JSON.parse($event.currentTarget.id);
+      console.log(recipe.f2f_url);
       $http.post('/favorites', {
         title: recipe.title,
         image_url: recipe.image_url,
