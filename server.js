@@ -17,7 +17,7 @@ app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
 });
 // initial render
-app.post('/login', handler.loginUser);
+app.get('/login', handler.loginUser);
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });

@@ -16,8 +16,9 @@ exports.signupUser = (req, res) => {
 };
 
 exports.loginUser = (req, res) => {
+  console.log(req.query);
   User
-    .find({ username: req.body.username, password: req.body.password })
+    .find({ username: req.query.username, password: req.query.password })
     .then((found) => {
       if (found.length === 0) {
         res.send('/signup');

@@ -4,7 +4,12 @@ dishifyApp
   .controller('LoginController', ($scope, $http) => {
     $scope.login = () => {
       $http
-        .post('/login', { username: $scope.name, password: $scope.pass })
+        .get('/login', {
+          params: {
+            username: $scope.name,
+            password: $scope.pass,
+          },
+        })
         .then((found) => {
           window.location.href = found.data;
         });
