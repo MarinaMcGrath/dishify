@@ -35,11 +35,12 @@ app.post('/signup', handler.signupUser);
 app.post('/login', handler.loginUser);
 
 app.get('/recipes', (req, result) => {
-  unirest.get(`https://community-food2fork.p.mashape.com/get?key=${process.env.FOOD_API}&rId=37859`)
+  const searchTerm = Object.values(req.query).join('');
+  unirest.get(`https://community-food2fork.p.mashape.com/search?key=${process.env.FOOD_API}&q=${searchTerm}`)
     .header('X-Mashape-Key', process.env.X_MASHAPE_KEY)
     .header('Accept', 'application/json')
     .end((res) => {
-      console.log(res.status, res.headers, res.body);
+      // console.log(res.status, res.headers, res.body);
       result.end(res.body);
     });
 });

@@ -2,8 +2,11 @@ const dishifyApp = angular.module('dishifyApp', []);
 
 dishifyApp
   .controller('RecipeListController', ($scope, $http) => {
-    $http.get('/recipes')
-      .then((a) => {
-        $scope.recipe = a.data.recipe;
-      });
+    $scope.searchRecipes = () => {
+      $http.get('/recipes', { params: $scope.query })
+        .then((a) => {
+          console.log(a.data);
+          $scope.recipes = a.data.recipes;
+        });
+    };
   });
