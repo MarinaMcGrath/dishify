@@ -1,8 +1,11 @@
 const dishifyApp = angular.module('dishifyApp', []);
 
 dishifyApp
-  .controller('FavoritesController', ($scope) => {
-    $scope.favorites = [];
+  .controller('FavoritesController', ($scope, $http) => {
+    $http.get('/favorites')
+      .then((result) => {
+        $scope.favorites = result.data;
+      });
   });
 
 dishifyApp
@@ -18,11 +21,10 @@ dishifyApp
         });
     };
     $scope.addFavorite = ($event) => {
-      console.log($event.currentTarget.id);
       $http
         .post('/favorites', { title: $event.currentTarget.id })
         .then((found) => {
-          console.log(found);
+          console.log('in addFav', found);
         });
     };
   });

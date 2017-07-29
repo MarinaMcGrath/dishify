@@ -43,3 +43,11 @@ exports.addFavorite = (req, res) => {
   });
   res.send('/homepage');
 };
+
+exports.getFavorites = (req, res) => {
+  Favorite
+    .find()
+    .then((found) => {
+      res.send(found);
+    });
+};

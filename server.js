@@ -42,3 +42,4 @@ app.get('/recipes', (req, result) => {
 });
 
 app.post('/favorites', handler.addFavorite);
+app.get('/favorites', handler.getFavorites);
