@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-md-6 search">
         <h2>Search Recipes</h2>
-        <ul ng-controller="RecipeListController">
+        <ul ng-controller="RecipeListController" style="list-style: none;">
           <form ng-submit="searchRecipes(query)">
             <input type="text" ng-model="query" placeholder="What's in your kitchen?">
             <input class="btn btn-primary" type="submit">
