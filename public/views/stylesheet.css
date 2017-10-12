@@ -1,8 +1,17 @@
 body {
-  font-family: 'Didact Gothic';
-   background-color: #f8f8ff; 
+  font-family: 'Open Sans', sans-serif;
+  background: url(./back2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
+.headers {
+  font-family: 'Pacifico', cursive;
+  font-size: xx-large;
+}
+
 .login {
   text-align: center;
 }
@@ -10,13 +19,34 @@ body {
 .signup {
   text-align: center;
 }
-
+.recipe {
+  color: white;
+}
 .recipes {
   border: 10px solid #F4E489;
 }
 
 .favorites {
   border: 5px solid #F4E489;
+  background-color: rgba(214, 210, 187, 0.8);
   /* box-shadow: 10px 10px 5px grey; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+}
+#tag {
+  margin: 5px;
+  font-size: medium;
+}
+
+.loginImage {
+  width: 200px;
+  height: 200px;
+}
+
+.redirectButton {
+  margin: 5px;
+}
+
+.homeImage {
+  width: 50px;
+  height: 50px;
 }

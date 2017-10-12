@@ -10,16 +10,17 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body class="homepage">
-    <h1>
-      <image src="plate.png" style="width:50px;height:50px;">Dishify Home Page</image>
+    <h1 class="headers">
+      <image src="plate.png" class="homeImage">Dishify Home Page</image>
     </h1>
     <div class="row">
       <div class="col-md-6 search">
-        <h2>Search Recipes</h2>
+        <h2 class="headers">Search Recipes</h2>
         <ul ng-controller="RecipeListController" style="list-style: none;">
           <form ng-submit="searchRecipes(query)">
             <input type="text" ng-model="query" placeholder="What's in your kitchen?">
@@ -27,7 +28,7 @@
           </form>
           <li ng-repeat="recipe in recipes" recipe="recipe">
             <div id={{recipe}} ng-click="addFavorite($event)">
-              <div><a href={{recipe.f2f_url}}>{{recipe.title}}</a></div>
+              <div class="recipe"><a href={{recipe.f2f_url}} style="color: white;">{{recipe.title}}</a></div>
               <div><image src={{recipe.image_url}} style="width:200px;height:200px;"></image></div>
             </div>
           </li>
@@ -35,7 +36,7 @@
       </div>
 
       <div class="col-md-4 favorites">
-        <h2>Popular</h2>
+        <h2 class="headers">Popular</h2>
         <ul ng-controller="FavoritesController" style="list-style: none;">
           <li ng-repeat="favorite in favorites" favorite="favorite">
                 <div>

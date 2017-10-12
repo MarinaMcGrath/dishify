@@ -14,6 +14,9 @@ exports.signupUser = (req, res) => {
   });
   res.send('/homepage');
 };
+exports.redirectToSignup = (req, res) => {
+  res.send('/signup');
+};
 
 exports.loginUser = (req, res) => {
   User

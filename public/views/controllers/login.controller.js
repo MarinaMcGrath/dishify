@@ -15,4 +15,11 @@ dishifyApp
           window.location.href = found.data;
         });
     };
+    $scope.redirectToSignup = () => {
+      $http.put('/signup')
+        .then((res) => {
+          window.location.href = res.data;
+        })
+        .catch(e => console.log(e));
+    };
   });
